@@ -103,7 +103,11 @@
   </head>
   <body>
 
-    </a>
+	<div>
+		In order to get this application work you need to enable some new features:<br/>
+		- firefox: about:config and set the option javascript.options.shared_memory to true<br/>
+		- chrome: pass the command line options --js-flags=--harmony-sharedarraybuffer and --enable-blink-feature=SharedArrayBuffer to chrome 
+	</div>
 
     <div class="spinner" id='spinner'></div>
     <div class="emscripten" id="status">Downloading...</div>
