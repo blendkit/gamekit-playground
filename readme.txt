@@ -46,14 +46,12 @@ In order for the other platforms to work, you need to install their SDKs:
 
 For web:
 Install emscripten-sdk: https://kripken.github.io/emscripten-site/docs/getting_started/downloads.html
-And modify the package_all_linux.sh script to point to the emsdk-portable-root.
+And set the environment-variable 'emsdk' to the root of the emsdk-portable-root.
 
-For bb-playbook: https://developer.blackberry.com/playbook/native/download/
-For bb-bb10: https://developer.blackberry.com/native/downloads/
-Also modify the package_all_linux.sh to point to the respective SDKs
+For bb-playbook set 'bb_playbook_ndk' to the root of the playbook-ndk: https://developer.blackberry.com/playbook/native/download/
+For bb-bb10 set 'bb_bb10_ndk' to the root of the bb10-ndk : https://developer.blackberry.com/native/downloads/
+For android: set ANDROID_HOME to the root of the Android-SDK : https://developer.android.com/studio/index.html ( only the command-line tools ) 
 
-For android:
-Modify the runtimes/android/local.properties to point to your SDK and NDK (not sure if you need the NDK at this point)
 
 
 -----------------------------------

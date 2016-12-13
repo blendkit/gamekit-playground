@@ -1,0 +1,6 @@
+runtimes/android/.gradle
+runtimes/android/build
+*.blend1
+NodeTree_dump.txt
+OgreKit.log
+runtimes/android/local.properties
