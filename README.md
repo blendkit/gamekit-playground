@@ -2,7 +2,7 @@
 
 Disclaimer
 ----------
-Before you even start: This version of gamekit these runtimes are based on is more than fragile and were more a playing field for me for integrating libs and such without the worry to make it super clean. Lots of things do work, but others do not or not as intended. **If you expect a 100% working engine with full support go to unity3d or unreal-engine.**
+Before you even start: The version of gamekit these runtimes are based on is more than fragile and were more my playing-field for integrating libs and experimenting and such without worrying to make it super clean. Lots of things do work, but others do not or not as intended. **If you expect a 100% working engine with full support go to unity3d or unreal-engine.**
 
 **The sourcecode is not opensourced,yet. But will be very soon.**  
 **No osx version at the moment,sry. Couldn't get a renderwindow to open. Use wine and the windows-version for now :) **
@@ -14,8 +14,8 @@ getting started
 * Startup blender: File=>User Preferences=>Add-Ons=>Install from File=>[navigate to the playground-folder's blender-addon] and choose blenderaddon.zip or the experimental version.
 * Select gamekit-renderer. On top where you see "Blender Render" choose "Gamekit".
 * On the Render-Panel under "Gamekit Runtime" choose the runtime file-icon and navigate to the playground=>runtimes=>your os=>**AppOgreKit** or **AppOgreKit.exe**  
-(**Sorry for not supporting mac-OSX at the moment**! I did try a complete night and day to get it to work. Without success. You can use wine on the windows-version though. Installing wine via brew did work for me)
 * Save your blend before starting the engine. Otherwise it will not work...
+* Press start
 
 
 Auto-Packaging of all supported Platforms(win,lin,android,bb10,playbook,web)
@@ -23,7 +23,7 @@ Auto-Packaging of all supported Platforms(win,lin,android,bb10,playbook,web)
 
 ##What you need?
  
-First of all you need to create your gamekit-project inside the playground-project folder and name you master-blend project.blend
+First of all you need to create your gamekit-project inside the playground-**project folder** and name you master-blend **project.blend**
 
 
 **Deploying:**
