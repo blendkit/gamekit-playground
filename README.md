@@ -33,16 +33,15 @@ Linux- and windows-package-creation should work out of the box.
 where you will find zips with the game-pack.  
 **windows:** starting  "./package_win.bat" will call the linux version with the help of a windows-bash (no zips are created and not really tested)
 
-In order for the other platforms to work, you need to install their SDKs:
+In order for the other platforms to be packaged, you need to install their SDKs:
 
 **For web**:
 Install emscripten-sdk: https://kripken.github.io/emscripten-site/docs/getting_started/downloads.html
-And set the environment-variable 'emsdk' to the root of the emsdk-portable-root.
-
-For **bb-playbook** set 'bb_playbook_ndk' to the root of the playbook-ndk: https://developer.blackberry.com/playbook/native/download/
-For **bb-bb10** set 'bb_bb10_ndk' to the root of the bb10-ndk : https://developer.blackberry.com/native/downloads/
-For **android**: set ANDROID_HOME to the root of the Android-SDK : https://developer.android.com/studio/index.html ( only the command-line tools ) 
-
+And set the environment-variable 'emsdk' to the root of the emsdk-portable-root.  
+For **bb-playbook** set 'bb_playbook_ndk' to the root of the playbook-ndk: https://developer.blackberry.com/playbook/native/download/  
+For **bb-bb10** set 'bb_bb10_ndk' to the root of the bb10-ndk : https://developer.blackberry.com/native/downloads/  
+For **android**: set ANDROID_HOME to the root of the Android-SDK : https://developer.android.com/studio/index.html ( only the command-line tools )   
+  
 
 I know these instructions might be a bit confusing but it is a first version. Feel free to contribute.
 
