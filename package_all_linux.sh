@@ -4,6 +4,8 @@
 ### To package web,android and blackberry following environment-variables have to be set
 ### android: 'ANDROID_HOME' have to be set to the root of the android-sdk 
 ###  https://developer.android.com/studio/index.html ( only the commandline tools )
+###          Additional you need to set "JAVA_HOME" to an proper JDK (e.g. 1.8)
+###          Atm you need to have installed android-25 and build-tool 23.0.3 (but you can edit the build.gradle-file in runtimes/android if you like)
 ###
 ### emscripten: 'emsdk' have to be set to the root of the portable-sdk
 ###  https://kripken.github.io/emscripten-site/docs/getting_started/downloads.html
@@ -19,6 +21,14 @@ echo "ANDROID_HOME: $ANDROID_HOME"
 echo "bb_bb10_ndk: $bb_bb10_ndk"
 echo "bb_playbook_ndk: $bb_playbook_ndk"
 echo "--------------------------------------------"
+
+# detect OS:
+unamestr=`uname`
+if [ "$unamestr" = "Windows_NT" ]; then
+  is_linux=0
+else
+  is_linux=1
+fi
 
 NAME=$1
 if [ "$NAME" = "" ]; then
@@ -48,7 +58,6 @@ cp -r _temp_project _package/$NAME-linux
 cp runtimes/linux/AppOgreKit _package/$NAME-linux/$NAME
 cp -r _temp_project _package/$NAME-windows
 cp runtimes/windows/AppOgreKit.exe _package/$NAME-windows/$NAME.exe
-cp -r runtimes/web _package/$NAME-web
 
 cd _package
 zip -r $NAME-linux.zip $NAME-linux
@@ -56,7 +65,12 @@ zip -r $NAME-win.zip $NAME-windows
 
 ## web / emscripten
 if [ "$emsdk" != "" ]; then
-    source $emsdk/emsdk_env.sh
+    if [ $is_linux -eq 1 ]; then 
+		echo "Calling: source $emsdk/emsdk_env$shell_postfix"
+		source $emsdk/emsdk_env$shell_postfix
+	else
+		echo "ON WINDOWS! Source should have been done already"
+	fi
     cp -r $CALL_FOLDER/runtimes/web $NAME-web
     cd $CALL_FOLDER/_temp_project
     cp game.dat project.blend
@@ -69,7 +83,7 @@ else
 fi
 
 ## ANDROID
-if [ "$ANDROID_HOME" != "" ]; then
+if [ "$ANDROID_HOME" != "" ] && [ "$JAVA_HOME" != "" ]; then
 	cd $CALL_FOLDER/runtimes/android/assets
 	rm -Rf $CALL_FOLDER/runtimes/android/assets/*
 	cp -r $CALL_FOLDER/_temp_project/* .
@@ -79,7 +93,7 @@ if [ "$ANDROID_HOME" != "" ]; then
 	mv build/outputs/apk $CALL_FOLDER/_package/$NAME-android
 	cp $CALL_FOLDER/_package/$NAME-android/android-debug.apk $CALL_FOLDER/_package/$NAME-android.apk
 else
-       	echo "Skipping Android! Install Android-SDK and set ANDROID_HOME-Environment-Variable to this SDK-Root-Folder"
+    echo "Skipping Android! Install Android-SDK and set ANDROID_HOME-Environment-Variable to this SDK-Root-Folder and set JAVA_HOME to your Java-JDK"
 fi
 
 ## Blackberry Playbook

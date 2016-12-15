@@ -1,5 +1,8 @@
+_temp_project
+_package
 runtimes/android/.gradle
 runtimes/android/build
+runtimes/android/assets/*
 *.blend1
 NodeTree_dump.txt
 OgreKit.log
