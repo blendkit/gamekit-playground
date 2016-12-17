@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ### CONFIG
-### To package web,android and blackberry following environment-variables have to be set
+### To package web,android and blackberry following environment-variables have to be set or set inside this file
 ### android: 'ANDROID_HOME' have to be set to the root of the android-sdk 
 ###  https://developer.android.com/studio/index.html ( only the commandline tools )
 ###          Additional you need to set "JAVA_HOME" to an proper JDK (e.g. 1.8)
@@ -15,9 +15,17 @@
 ###  playbook	: https://developer.blackberry.com/playbook/native/download/
 ####
 
-echo "VARCHECK:"
+#### CONFIG-Set paths here if you like
+emsdk=$emsdk
+bb_bb10_ndk=$bb_bb10_ndk
+bb_playbook_ndk=$bb_playbook_ndk
+ANDROID_HOME=$ANDROID_HOME
+JAVA_HOME=$JAVA_HOME
+#############################
+
+echo "Environment-Variable for crosscompilation:"
 echo "emsdk: $emsdk"
-echo "ANDROID_HOME: $ANDROID_HOME"
+echo "ANDROID_HOME: $ANDROID_HOME JAVA_HOME: $JAVA_HOME"
 echo "bb_bb10_ndk: $bb_bb10_ndk"
 echo "bb_playbook_ndk: $bb_playbook_ndk"
 echo "--------------------------------------------"
@@ -66,8 +74,8 @@ zip -r $NAME-win.zip $NAME-windows
 ## web / emscripten
 if [ "$emsdk" != "" ]; then
     if [ $is_linux -eq 1 ]; then 
-		echo "Calling: source $emsdk/emsdk_env$shell_postfix"
-		source $emsdk/emsdk_env$shell_postfix
+		echo "Calling: source $emsdk/emsdk_env.sh"
+		source $emsdk/emsdk_env.sh
 	else
 		echo "ON WINDOWS! Source should have been done already"
 	fi

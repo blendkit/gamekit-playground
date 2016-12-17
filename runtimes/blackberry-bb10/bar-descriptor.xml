@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <qnx xmlns="http://www.qnx.com/schemas/application/1.0">
 
+<!--
+You need to fill in your author-name and authorid that match your debug-token.
+
+For signing please refer this related pages:
+https://developer.blackberry.com/playbook/native/documentation/getting_started.html
+https://www.blackberry.com/SignedKeys/codesigning.html
+https://developer.blackberry.com/native/documentation/dev/tools/signing_and_publishing.html
+https://developer.blackberry.com/native/documentation/dev/tools/package_and_deploy_app.html
+https://developer.blackberry.com/native/documentation/dev/tools/configuration.html
+
+-->
+
+
 <!-- BlackBerry® 10 application descriptor file.
 
     Specifies parameters for identifying, installing, and launching native applications on BlackBerry® 10 OS.
@@ -8,11 +21,11 @@
 
     <!-- A universally unique application identifier. Must be unique across all BlackBerry applications.
          Using a reverse DNS-style name as the id is recommended. (Eg. com.example.ExampleApplication.) Required. -->
-    <id>org.tt.gamekit</id>
+    <id>org.tt.gkplayground</id>
 
     <!-- The name that is displayed in the BlackBerry application installer. 
          May have multiple values for each language. See samples or xsd schema file. Optional. -->
-    <name>GAMEKIT</name>
+    <name>GAMEKIT-Playground</name>
     
     <!-- A string value of the format <0-999>.<0-999>.<0-999> that represents application version which can be used to check for application upgrade. 
          Values can also be 1-part or 2-part. It is not necessary to have a 3-part value.
@@ -28,9 +41,10 @@
     <description>Gamekit-BB</description>
 
     <!--  Name of author which is used for signing. Must match the developer name of your development certificate. -->
-    <author>Freelancer</author>
-    <authorId>gYAAgP9NREIcE9qW0ulVO20ERp8</authorId>
-
+<!--    <author>your_developername</author>
+    <authorId>testMS44LjEuMSAgICAgICAgICA</authorId>
+-->
+<authorId>yYBBgMLYAU4UcBwrHAzdMHL768A</authorId>
     <!--  Unique author ID assigned by signing authority. Required if using debug tokens. -->
     <!--<authorId>testMS44LjEuMSAgICAgICAgICA</authorId>-->
    
