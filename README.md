@@ -4,7 +4,7 @@ Disclaimer
 ----------
 Before you even start: The version of gamekit these runtimes are based on is more than fragile and were more my playing-field for integrating libs and experimenting and such without worrying to make it super clean. Lots of things do work, but others do not or not as intended. **If you expect a 100% working engine with full support go to unity3d or unreal-engine.**
 
-**The sourcecode is not opensourced,yet. But will be very soon.**  
+**The sourcecode can be found at https://github.com/dertom95/gamekit-playground-src **  
 **No osx version at the moment,sry. Couldn't get a renderwindow to open. Use wine and the windows-version for now :)**
 
 getting started
